@@ -1,8 +1,15 @@
-import RegistartionForm from "@/components/RegistartionForm";
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import ennoLogo from "../tools/image/ennomart-logo.svg"
+import Link from "next/link";
+import Header from "@/components/home/Header";
+
 
 export default function Home() {
+
   return (
-    <RegistartionForm />
+    <div>
+      <Header />
+    </div>
   );
 }
