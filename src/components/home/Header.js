@@ -3,7 +3,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <nav className="bg-white px-20 py-1">
+        <nav className="bg-white px-20 py-1 border-b-[1px]">
             <div className="flex flex-row gap-20 justify-between items-center">
 
                 <div>

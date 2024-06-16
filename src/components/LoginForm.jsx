@@ -70,13 +70,17 @@ const LoginForm = ({ setToggleLogin, isPasswordVisible, togglePasswordVisibility
                         <span onClick={() => setToggleLogin(false)} className="text-blue-900 cursor-pointer font-semibold">Sign up</span>
                     </p>
 
-                    <p className="mt-6 text-xs text-gray-600 text-center">
-                        I am a Seller{" "}
-                        <Link href="/seller">
-                            <span  className="text-blue-900 cursor-pointer font-semibold">Seller</span>
-                        </Link>
+                    <div className="flex justify-center items-center">
+                    <Link href="/seller">
+                        {/* <span  className="text-blue-900 cursor-pointer font-semibold">Seller</span> */}
+                        <button className="btn-primary text-sm">
+                            Seller Login
+                        </button>
+                    </Link>
+                    </div>
+                    
 
-                    </p>
+
 
 
 
