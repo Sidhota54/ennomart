@@ -1,8 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css";
 import { FileUploader } from "react-drag-drop-files";
+import Image from "next/image";
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const AddProduct = () => {
   const [productForm, setProductForm] = useState({
@@ -14,7 +18,6 @@ const AddProduct = () => {
     setProductForm({ ...productForm, [key]: value });
   };
   const handleUploadFile = (value, key) => {
-    // console.log(value)
     setProductForm({ ...productForm, [key]: [...productForm[key], ...value] });
   };
   return (
@@ -137,7 +140,7 @@ const TextEditor = ({ className, value, onChange }) => {
   );
 };
 
-// import "./styles.css";
+
 
 export const MultiFileUploader = ({ onChange, files = [] }) => {
   const fileTypes = ["JPEG", "PNG", "GIF"];
@@ -158,9 +161,8 @@ export const MultiFileUploader = ({ onChange, files = [] }) => {
                 key={index}
                 className="h-[150px] w-[150px] rounded-md  border-2"
               >
-                <img
+                <Image
                   src={URL.createObjectURL(file)}
-                  // src={file}
                   alt={`preview-${index}`}
                   className="w-ful h-full object-cover"
                 />
